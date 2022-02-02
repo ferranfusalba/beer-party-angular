@@ -1,1 +1,273 @@
-/* You can add global styles to this file, and also import other style files */
+/* App General */
+
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+
+/* Fonts */
+
+@font-face {
+    font-family: "Libre Baskerville Bold";
+    src: url(../src/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf)
+}
+
+@font-face {
+    font-family: "Work Sans";
+    src: url(../src/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Work Sans";
+    font-weight: 200;
+    src: url(../src/fonts/Work_Sans/static/WorkSans-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: "Work Sans";
+    font-weight: 400;
+    src: url(../src/fonts/Work_Sans/static/WorkSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Work Sans";
+    font-weight: 700;
+    src: url(../src/fonts/Work_Sans/static/WorkSans-Bold.ttf);
+}
+
+
+/* Backgrounds */
+
+.bg-azure {
+    background-color: #007fff;
+}
+
+.bg-florinian {
+    background-color: #D7A100;
+}
+
+.bg-malt {
+    background-color: rgb(192, 133, 110);
+    color: white;
+    border-radius: 20px;
+}
+
+.bg-twist {
+    background-color: rgba(95, 16, 18, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.bg-hops {
+    background-color: rgb(190, 255, 174);
+    border-radius: 20px;
+}
+
+.bg-yeast {
+    background-color: rgb(253, 239, 158);
+    border-radius: 20px;
+}
+
+.bg-coral {
+    padding: 10px 0;
+    background-color: rgb(255, 173, 143, 0.5);
+}
+
+.bg-abv {
+    padding: 10px 0;
+    background-color: rgb(106, 183, 255, 0.5);
+}
+
+.bg-ibu {
+    padding: 10px 0;
+    background-color: rgb(248, 177, 110, 0.5);
+}
+
+.bg-2a {
+    background-color: rgba(95, 16, 18, 0.8);
+    color: white;
+}
+
+
+/* more general stuff: text-decoration: none, container modification */
+
+.tdn {
+    text-decoration: none;
+}
+
+.container {
+    margin-top: 5rem;
+}
+
+.marginsContainer {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.tac {
+    text-align: center;
+}
+
+
+/* header: paddings, margins, button component */
+
+.plButton {
+    padding-left: 12px;
+}
+
+.plButtonText {
+    padding-left: 20px;
+}
+
+.mhHeader {
+    padding: 8px 0;
+}
+
+.btnBack:hover {
+    color: white;
+}
+
+
+/* tags */
+
+.tagCommonStyle {
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+.tagABV {
+    background-color: rgb(106, 183, 255);
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 0 10px;
+}
+
+.tagIBU {
+    background-color: rgb(248, 177, 110);
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.tagID {
+    background-color: #2a2a2a;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* icons, images */
+
+.bi-person-circle {
+    font-size: 30px;
+}
+
+.beerImg {
+    max-height: 100px;
+}
+
+
+/* various beer components */
+
+.imgCoverBeer {
+    height: 200px;
+}
+
+.beerName {
+    color: #000000;
+    font-family: 'Libre Baskerville Bold', serif;
+    text-align: center;
+}
+
+.beerTagline {
+    color: rgb(173, 127, 0);
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+}
+
+.descriptionSmall {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    text-align: start;
+}
+
+.cardBeer {
+    border: 0.25px solid #2a2a2a;
+    padding: 0 20px;
+}
+
+.titleBeersPage {
+    font-family: 'Libre Baskerville Bold', serif;
+    font-weight: 900;
+}
+
+.introMsg {
+    color: #2a2a2a;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.cardFood {
+    width: 18rem;
+    padding: 0;
+    border: 0.25px solid #2a2a2a;
+    margin: 0 6px;
+}
+
+
+/* fonts */
+
+.workSans {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.workSansB {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
+
+.workSansL {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+
+.workSansL2 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+}
+
+
+/* popper */
+
+:root {
+    --popper-theme-background-color: #333333;
+    --popper-theme-background-color-hover: #333333;
+    --popper-theme-text-color: #ffffff;
+    --popper-theme-border-width: 0px;
+    --popper-theme-border-style: solid;
+    --popper-theme-border-radius: 6px;
+    --popper-theme-padding: 10px;
+    --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
+}
+
+
+/* responsive for desktop */
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 500px;
+        justify-content: center;
+    }
+}
