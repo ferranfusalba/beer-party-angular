@@ -1,16 +1,33 @@
-<br>
-<div *ngIf="articles!=null; else wait">
-    <table border="1">
-        <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Tagline</td>
-        </tr>
-        <tr *ngFor="let art of articles">
-            <td><a routerLink="beer/{{art.id}}">{{art.id}}</a></td>
-            <td>{{art.name}}</td>
-            <td>{{art.tagline}}</td>
-        </tr>
-    </table>
+<div class="container">
+    <div class="mb-4">
+        Welcome to Deale's party beer guide.
+        <br> Choose your favourite one and join us!
+    </div>
+    <h1 class="text-center mb-3">List of beers</h1>
+    <div *ngIf="articles!=null; else wait">
+        <div *ngFor="let art of articles">
+            <a routerLink="beer/{{art.id}}">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-2">IMG</div>
+                        <div class="col-10">
+                            <div class="card-body">
+                                <h5 class="card-title">{{art.name}}</h5>
+                                <p class="card-text">{{art.tagline}}</p>
+                                <!-- <div class="d-flex flex-row justify-content-center"> -->
+                                <div>
+                                    {{art.abv}}
+                                </div>
+                                <div>
+                                    {{art.ibu}}
+                                </div>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <ng-template #wait>Waiting data...</ng-template>
 </div>
-<ng-template #wait>Waiting data...</ng-template>

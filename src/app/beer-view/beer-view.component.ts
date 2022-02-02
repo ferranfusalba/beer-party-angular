@@ -19,7 +19,7 @@ export class BeerViewComponent implements OnInit {
     .subscribe(
       result => {
         this.articles = result;
-      }
+      },
     ),
     this.activatedRoute.paramMap.subscribe((parametros: ParamMap) => {
       this.nro = parseInt(parametros.get("nro")!) + 1;

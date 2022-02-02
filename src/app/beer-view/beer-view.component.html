@@ -1,18 +1,156 @@
 <a routerLink="">Back to List</a>
-<br>
-<p>Beer number {{nro1}}</p>
-<p>{{articles[nro2].name}}</p>
-<p>{{articles[nro2].tagline}}</p>
-<p>{{articles[nro2].method.mash_temp[0].temp.value}}</p>
-<p>twist:</p>
-<div *ngIf="articles[nro2].method.twist == null, else twistValue">
+<div class="container">
+    <!-- Image -->
+    <img src="{{articles[nro2].image_url}}" alt="" style="height: 200px;">
+    <!-- Name -->
+    <h1 class="text-center mt-4">{{articles[nro2].name}}</h1>
+    <!-- ID tag -->
+    <div class="d-flex flex-row justify-content-center">
+        #{{articles[nro2].id}}
+    </div>
+    <!-- Tagline -->
+    <h5 class="mt-3">{{articles[nro2].tagline}}</h5>
+    <!-- Description -->
+    <div class="mt-3 text-start">
+        <p>{{articles[nro2].description}}</p>
+    </div>
+    <!-- Three data types -->
+    <div *ngIf="articles[nro2].ibu != null, else notIBU">
+        <div class="row mt-2">
+            <div class="col-4 border-0 rounded">
+                <div><i class="bi bi-calendar-check"></i></div>
+                <div>First brewed</div>
+                <div>{{articles[nro2].first_brewed}}</div>
+            </div>
+            <div class="col-4 border-0 rounded">
+                <div>ABV</div>
+                <div>{{articles[nro2].abv}}</div>
+                <div><i class="bi bi-info-circle"></i></div>
+            </div>
+            <div class="col-4 border-0 rounded">
+                <div>IBU</div>
+                <div>{{articles[nro2].ibu}}</div>
+                <div><i class="bi bi-info-circle"></i></div>
+            </div>
+        </div>
+    </div>
+    <ng-template #notIBU>
+        <div class="row mt-2">
+            <div class="col-6 border-0 rounded">
+                <div><i class="bi bi-calendar-check"></i></div>
+                <div>First brewed</div>
+                <div>{{articles[nro2].first_brewed}}</div>
+            </div>
+            <div class="col-6 border-0 rounded">
+                <div>ABV</div>
+                <div>{{articles[nro2].abv}}</div>
+                <div><i class="bi bi-info-circle"></i></div>
+            </div>
+        </div>
+    </ng-template>
+    <!-- Other data Accordion -->
+    <div class="accordion mt-3" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Other data
+            </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-start">
+                    <div class="mb-1">target_fg: {{articles[nro2].target_fg}}</div>
+                    <div class="mb-1">target_og: {{articles[nro2].target_og}}</div>
+                    <div class="mb-1">ebc: {{articles[nro2].ebc}}</div>
+                    <div class="mb-1">srm: {{articles[nro2].srm}}</div>
+                    <div class="mb-1">ph: {{articles[nro2].ph}}</div>
+                    <div class="mb-1">attenuation_level: {{articles[nro2].attenuation_level}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Volume & Boil Volume -->
+    <div class="row mt-3">
+        <div class="col-6 border-0">
+            <div><b>Volume</b></div>
+            <div>{{articles[nro2].volume.value}} {{articles[nro2].volume.unit}}</div>
+        </div>
+        <div class="col-6 border-0">
+            <div><b>Boil volume</b></div>
+            <div>{{articles[nro2].boil_volume.value}} {{articles[nro2].boil_volume.unit}}</div>
+        </div>
+    </div>
+    <!-- Method -->
+    <div class="row mt-4">
+        <h5>Method</h5>
+        <!-- mash temp -->
+        <div class="col-6">
+            <div><b>mash_temp</b></div>
+            <div>T: {{articles[nro2].method.mash_temp[0].temp.value}} {{articles[nro2].method.mash_temp[0].temp.unit}}</div>
+            <!-- Duration, only shown if does not return null -->
+            <div *ngIf="articles[nro2].method.mash_temp[0].duration == null, else durationNotNull"></div>
+            <ng-template #durationNotNull>
+                <div>duration: {{articles[nro2].method.mash_temp[0].duration}}</div>
+            </ng-template>
+        </div>
+        <!-- fermentation -->
+        <div class="col-6">
+            <div><b>fermentation</b></div>
+            <div>T: {{articles[nro2].method.fermentation.temp.value}} {{articles[nro2].method.fermentation.temp.unit}}</div>
+        </div>
+        <!-- Twist, only shown if does not return null -->
+        <div *ngIf="articles[nro2].method.twist == null, else twistNotNull"></div>
+        <ng-template #twistNotNull>
+            <div class="mt-2 border-0">twist: {{articles[nro2].method.twist}}</div>
+        </ng-template>
+    </div>
+    <!-- Ingredients -->
+    <div class="mt-4">
+        <h4>Ingredients</h4>
+        <!-- Malt -->
+        <h5 class="mt-3 mb-3">Malt</h5>
+        <div *ngFor="let maltObject of articles[nro2].ingredients.malt" class="mt-2">
+            <p>{{maltObject.name}}</p>
+            <p>{{maltObject.amount.value}} {{maltObject.amount.unit}}</p>
+        </div>
+        <!-- Hops -->
+        <h5 class="mt-3 mb-3">Hops</h5>
+        <div *ngFor="let hopsObject of articles[nro2].ingredients.hops" class="mt-2">
+            <p>{{hopsObject.name}}</p>
+            <p>{{hopsObject.amount.value}} {{hopsObject.amount.unit}}</p>
+            <div>
+                {{hopsObject.add}}, {{hopsObject.attribute}}
+            </div>
+        </div>
+        <!-- Yeast -->
+        <h5 class="mt-3 mb-3">Yeast</h5>
+        <div class="text-center">{{articles[nro2].ingredients.yeast}}</div>
+    </div>
+    <!-- Food pairing -->
+    <div class="mt-2">
+        <h5 class="mt-4 mb-4">Food pairing</h5>
+        <!-- Card carousel -->
+        <div class="row flex-row flex-nowrap marginsContainer" style="overflow-x: auto;">
+            <div *ngFor="let foodPair of articles[nro2].food_pairing">
+                <div class="card">
+                    <img src="/assets/img/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg" alt="Card image cap" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{foodPair}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brewers tips -->
+    <div class="mt-2 mb-4">
+        <h5 class="mt-4 mb-4">Brewers tips</h5>
+        <div class="row">
+            <div class="col-2">
+                <i class="bi bi-person-circle"></i>
+            </div>
+            <div class="col-10 text-start">
+                <p>{{articles[nro2].brewers_tips}}</p>
+                <small>{{articles[nro2].contributed_by}}</small>
+            </div>
+        </div>
+    </div>
 </div>
-<ng-template #twistValue>{{articles[nro2].method.twist}}</ng-template>
-<p>Ingredients:</p>
-<p>Malt:</p>
-<hr>
-<div *ngFor="let maltObject of articles[nro2].ingredients.malt">
-    <p>{{maltObject.name}}</p>
-    <p>{{maltObject.amount.value}} {{maltObject.amount.unit}}</p>
-</div>
-<br>
