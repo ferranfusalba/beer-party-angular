@@ -1,1 +1,18 @@
-<p>Beer number {{nro}}</p>
+<a routerLink="">Back to List</a>
+<br>
+<p>Beer number {{nro1}}</p>
+<p>{{articles[nro2].name}}</p>
+<p>{{articles[nro2].tagline}}</p>
+<p>{{articles[nro2].method.mash_temp[0].temp.value}}</p>
+<p>twist:</p>
+<div *ngIf="articles[nro2].method.twist == null, else twistValue">
+</div>
+<ng-template #twistValue>{{articles[nro2].method.twist}}</ng-template>
+<p>Ingredients:</p>
+<p>Malt:</p>
+<hr>
+<div *ngFor="let maltObject of articles[nro2].ingredients.malt">
+    <p>{{maltObject.name}}</p>
+    <p>{{maltObject.amount.value}} {{maltObject.amount.unit}}</p>
+</div>
+<br>

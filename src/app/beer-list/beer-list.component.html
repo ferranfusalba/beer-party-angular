@@ -1,1 +1,16 @@
-<p>beer-list works!</p>
+<br>
+<div *ngIf="articles!=null; else wait">
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Tagline</td>
+        </tr>
+        <tr *ngFor="let art of articles">
+            <td><a routerLink="beer/{{art.id}}">{{art.id}}</a></td>
+            <td>{{art.name}}</td>
+            <td>{{art.tagline}}</td>
+        </tr>
+    </table>
+</div>
+<ng-template #wait>Waiting data...</ng-template>

@@ -5,7 +5,7 @@ import { BeerViewComponent } from './beer-view/beer-view.component';
 
 const routes: Routes = [
   {
-    path: 'beers',
+    path: '',
     component: BeerListComponent
   },
   {
