@@ -9,7 +9,7 @@
         <br> Choose your favourite one and join us!
     </div>
     <h1 class="text-center mb-3 titleBeersPage">List of beers</h1>
-    <div *ngIf="articles!=null">
+    <div *ngIf="articles!=null" class="mb-4">
         <div *ngFor="let art of articles">
             <a routerLink="beer/{{art.id}}" class="tdn">
                 <div class="card mt-3 cardBeer">
