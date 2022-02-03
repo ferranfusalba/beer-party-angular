@@ -1,14 +1,14 @@
 <nav class="fixed-top bothHeaders">
-    <div class="navbar-brand text-white text-center m-0 tdn workSans">
+    <div class="navbar-brand text-white m-0 tdn workSans">
         Beer Party!
     </div>
 </nav>
 <div class="container">
-    <div class="mb-4 text-center introMsg">
+    <div class="mb-4 introMsg">
         Welcome to Deale's party beer guide.
         <br> Choose your favourite one and join us!
     </div>
-    <h1 class="mb-3 text-center titleBeersPage">List of beers</h1>
+    <h1 class="mb-3 titleBeersPage">List of beers</h1>
     <div *ngIf="articles!=null" class="mb-4">
         <div *ngFor="let art of articles">
             <a routerLink="beer/{{art.id}}" class="tdn">

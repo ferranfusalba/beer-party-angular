@@ -77,7 +77,7 @@
         </div>
     </div>
     <!-- Volume & Boil Volume -->
-    <div class="row mt-3 workSans text-center">
+    <div class="row mt-3 workSans">
         <div class="col-6 border-0">
             <div><b>Volume</b></div>
             <div>{{articles[nro2].volume.value}} {{articles[nro2].volume.unit}}</div>
@@ -88,7 +88,7 @@
         </div>
     </div>
     <!-- Method -->
-    <div class="row mt-4 workSans text-center">
+    <div class="row mt-4 workSans">
         <h5 class="workSansB">Method</h5>
         <!-- mash temp -->
         <div class="col-6">
@@ -115,7 +115,7 @@
     </div>
     <!-- Ingredients -->
     <div class="mt-4">
-        <h4 class="workSansB text-center">Ingredients</h4>
+        <h4 class="workSansB">Ingredients</h4>
         <!-- Malt -->
         <h5 class="mt-3 mb-3 workSansL bg-malt ingrTitle">Malt</h5>
         <div *ngFor="let maltObject of articles[nro2].ingredients.malt" class="mt-2 row workSans marginsContainer">
@@ -141,11 +141,11 @@
         </div>
         <!-- Yeast -->
         <h5 class="mt-3 mb-3 workSansL bg-yeast ingrTitle">Yeast</h5>
-        <div class="text-center workSans">{{articles[nro2].ingredients.yeast}}</div>
+        <div class="workSans">{{articles[nro2].ingredients.yeast}}</div>
     </div>
     <!-- Food pairing -->
     <div class="mt-2">
-        <h5 class="mt-4 mb-4 text-center workSansB">Food pairing</h5>
+        <h5 class="mt-4 mb-4 workSansB">Food pairing</h5>
         <!-- Card carousel -->
         <div class="row flex-row flex-nowrap marginsContainer cardFood0">
             <div *ngFor="let foodPair of articles[nro2].food_pairing" class="p0600">
