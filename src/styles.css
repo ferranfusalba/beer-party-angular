@@ -31,12 +31,14 @@
 
 /* Backgrounds */
 
-.bg-azure {
-    background-color: #007fff;
+html,
+body {
+    background-color: rgb(255, 227, 190);
 }
 
 .bg-malt {
     background-color: rgb(192, 133, 110);
+    border: 1px solid #2a2a2a;
     color: white;
 }
 
@@ -49,10 +51,12 @@
 
 .bg-hops {
     background-color: rgb(190, 255, 174);
+    border: 1px solid #2a2a2a;
 }
 
 .bg-yeast {
     background-color: rgb(253, 239, 158);
+    border: 1px solid #2a2a2a;
 }
 
 .bg-coral {
@@ -93,7 +97,7 @@
 /* header: paddings, margins, button component */
 
 .bothHeaders {
-    background-color: #D7A100;
+    background-color: #2a2a2a;
     padding: 8px 0;
 }
 
@@ -187,6 +191,12 @@
     text-align: center;
 }
 
+.beerTaglineIntro {
+    color: rgb(78, 59, 59);
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+}
+
 .descriptionSmall {
     font-family: 'Work Sans', sans-serif;
     font-size: 14px;
@@ -196,6 +206,11 @@
 .cardBeer {
     border: 0.25px solid #2a2a2a;
     padding: 0 20px;
+    transition: 0.4s;
+}
+
+.cardBeer:hover {
+    background-color: rgb(216, 129, 95);
 }
 
 .titleBeersPage {
