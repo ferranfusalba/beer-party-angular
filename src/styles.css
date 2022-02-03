@@ -1,13 +1,3 @@
-/* App General */
-
-#app {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-}
-
-
 /* Fonts */
 
 @font-face {
@@ -48,7 +38,6 @@
 .bg-malt {
     background-color: rgb(192, 133, 110);
     color: white;
-    border-radius: 20px;
 }
 
 .bg-twist {
@@ -60,12 +49,10 @@
 
 .bg-hops {
     background-color: rgb(190, 255, 174);
-    border-radius: 20px;
 }
 
 .bg-yeast {
     background-color: rgb(253, 239, 158);
-    border-radius: 20px;
 }
 
 .bg-coral {
@@ -99,13 +86,6 @@
 .marginsContainer {
     padding-left: 12px;
     padding-right: 12px;
-}
-
-.threeDataTypeTag {
-    margin-top: 10px;
-    padding: 10px 0;
-    text-align: center;
-    border-radius: 10px;
 }
 
 
@@ -175,6 +155,18 @@
 
 /* various beer components */
 
+.threeDataTypeTag {
+    margin-top: 10px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.ingrTitle {
+    border-radius: 20px;
+    text-align: center;
+}
+
 .imgCoverBeer {
     height: 200px;
     display: block;
@@ -216,21 +208,14 @@
 }
 
 .cardFood {
-    /* width: 18rem; */
-    /* padding: 0; */
     border: 0.25px solid #2a2a2a;
-    /* margin: 0 6px; */
 }
 
 .cardFood0 {
     overflow-x: auto;
 }
 
-.imgFoodSample {
-    height: 100%;
-}
-
-.p0 {
+.p0600 {
     padding: 0 6px 0 0;
 }
 
