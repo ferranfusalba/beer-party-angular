@@ -33,6 +33,10 @@ The visual structure of the app was made with Bootstrap and CSS. Only flexbox, m
 
 Cheers! 🍻
 
+## Colophon
+
+Beers API: [PunkAPI](https://api.punkapi.com/v2/beers)
+
 ---
 
 ### Original README
