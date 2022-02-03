@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-beer-view',
   templateUrl: './beer-view.component.html',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class BeerViewComponent implements OnInit {
   articles: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient) { }
+  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient, private _location: Location) { }
   nro!: number;
   beer!: string;
   nro1!: number;
@@ -26,13 +27,12 @@ export class BeerViewComponent implements OnInit {
       this.beer = '';
       this.nro1 = this.nro - 1;
       this.nro2 = this.nro - 2;
-     /*
-      for (let x = 1; x <= 25; x++) {
-        let t = x * this.nro;
-        this.beer += t + '-';
-      } */
     },
     )
+  }
+
+  previous() {
+    this._location.back();
   }
 
 }

@@ -1,27 +1,35 @@
+<nav class="fixed-top bg-florinian mhHeader">
+    <div class="navbar-brand text-white text-center tdn tac m-0 workSans">
+        Beer Party!
+    </div>
+</nav>
 <div class="container">
-    <div class="mb-4">
+    <div class="mb-4 introMsg tac">
         Welcome to Deale's party beer guide.
         <br> Choose your favourite one and join us!
     </div>
-    <h1 class="text-center mb-3">List of beers</h1>
-    <div *ngIf="articles!=null; else wait">
+    <h1 class="text-center mb-3 titleBeersPage">List of beers</h1>
+    <div *ngIf="articles!=null">
         <div *ngFor="let art of articles">
-            <a routerLink="beer/{{art.id}}">
-                <div class="card">
+            <a routerLink="beer/{{art.id}}" class="tdn">
+                <div class="card mt-3 cardBeer">
                     <div class="row g-0">
-                        <div class="col-2">IMG</div>
+                        <div class="col-2 d-flex align-items-center justify-content-center">
+                            <img src="{{art.image_url}}" alt="Beer tag ('Keg only') or beer tag with design" class="img-fluid rounded-start beerImg">
+                        </div>
                         <div class="col-10">
                             <div class="card-body">
-                                <h5 class="card-title">{{art.name}}</h5>
-                                <p class="card-text">{{art.tagline}}</p>
-                                <!-- <div class="d-flex flex-row justify-content-center"> -->
-                                <div>
-                                    {{art.abv}}
+                                <h5 class="card-title beerName">{{art.name}}</h5>
+                                <p class="card-text beerTagline">{{art.tagline}}</p>
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="tagCommonStyle tagABV">
+                                        ABV: {{art.abv}}
+                                    </div>
+                                    <!-- <app-tag></app-tag> -->
+                                    <div *ngIf="art.ibu != null" class="tagCommonStyle tagIBU">
+                                        IBU: {{art.ibu}}
+                                    </div>
                                 </div>
-                                <div>
-                                    {{art.ibu}}
-                                </div>
-                                <!-- </div> -->
                             </div>
                         </div>
                     </div>
@@ -29,5 +37,4 @@
             </a>
         </div>
     </div>
-    <ng-template #wait>Waiting data...</ng-template>
 </div>

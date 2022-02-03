@@ -1,11 +1,19 @@
-<a routerLink="">Back to List</a>
+<nav class="fixed-top bg-florinian mhHeader">
+    <div class="d-flex justify-content-start">
+        <div class="plButton">
+            <button class="btn btn-sm bg-2a workSans btnBack" (click)="previous()">Back</button>
+        </div>
+        <div class="plButtonText d-flex align-items-center">
+            <h5 class="text-white workSans text-start m-0">{{articles[nro2].name}}</h5>
+        </div>
+    </div>
+</nav>
 <div class="container">
     <!-- Image -->
     <img src="{{articles[nro2].image_url}}" alt="" class="imgCoverBeer">
     <!-- Name -->
     <h1 class="beerName mt-4">{{articles[nro2].name}}</h1>
     <!-- ID tag -->
-    <!-- /// THIS IS A COMPONENT IN VUE, WITH PROPS -->
     <div class="d-flex flex-row justify-content-center">
         <div class="tagID mt-2 tagCommonStyle">
             <small>#{{articles[nro2].id}}</small>
@@ -72,7 +80,6 @@
         </div>
     </div>
     <!-- Volume & Boil Volume -->
-    <!-- /// THIS IS A COMPONENT IN VUE, WITH PROPS -->
     <div class="row mt-3 workSans tac">
         <div class="col-6 border-0">
             <div><b>Volume</b></div>
@@ -87,7 +94,6 @@
     <div class="row mt-4 workSans tac">
         <h5 class="workSansB">Method</h5>
         <!-- mash temp -->
-        <!-- /// THIS IS A COMPONENT IN VUE, WITH PROPS -->
         <div class="col-6">
             <div><b>mash_temp</b></div>
             <div>T: {{articles[nro2].method.mash_temp[0].temp.value}} {{articles[nro2].method.mash_temp[0].temp.unit}}</div>
@@ -107,7 +113,7 @@
         <div *ngIf="articles[nro2].method.twist == null, else twistNotNull"></div>
         <ng-template #twistNotNull>
             <div class="marginsContainer">
-                <div class="mt-2 border-0 bg-twist">twist: {{articles[nro2].method.twist}}</div>
+                <div class="mt-2 border-0 bg-twist p-2">twist: {{articles[nro2].method.twist}}</div>
             </div>
         </ng-template>
     </div>
@@ -116,9 +122,13 @@
         <h4 class="workSansB tac">Ingredients</h4>
         <!-- Malt -->
         <h5 class="mt-3 mb-3 workSansL bg-malt tac">Malt</h5>
-        <div *ngFor="let maltObject of articles[nro2].ingredients.malt" class="mt-2 tac row workSans marginContainer">
-            <b>{{maltObject.name}}</b>
-            <p>{{maltObject.amount.value}} {{maltObject.amount.unit}}</p>
+        <div *ngFor="let maltObject of articles[nro2].ingredients.malt" class="mt-2 row workSans marginsContainer">
+            <div class="col-7">
+                <b>{{maltObject.name}}</b>
+            </div>
+            <div class="col-5">
+                <p>{{maltObject.amount.value}} {{maltObject.amount.unit}}</p>
+            </div>
         </div>
         <!-- Hops -->
         <h5 class="mt-3 mb-3 workSansL bg-hops tac">Hops</h5>
@@ -128,9 +138,9 @@
             </div>
             <div class="col-5">
                 <b>{{hopsObject.amount.value}} {{hopsObject.amount.unit}}</b>
-            </div>
-            <div class="workSansL2">
-                {{hopsObject.add}}, {{hopsObject.attribute}}
+                <div class="workSansL2">
+                    {{hopsObject.add}}, {{hopsObject.attribute}}
+                </div>
             </div>
         </div>
         <!-- Yeast -->
@@ -144,7 +154,7 @@
         <div class="row flex-row flex-nowrap marginsContainer cardFood0">
             <div *ngFor="let foodPair of articles[nro2].food_pairing" class="p0">
                 <div class="card cardFood">
-                    <img src="/assets/img/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg" alt="Card image cap" />
+                    <img src="/assets/img/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg" alt="Card image cap" class="imgFoodSample" />
                     <div class="card-body">
                         <h5 class="card-title beerTagline">{{foodPair}}</h5>
                     </div>

@@ -233,6 +233,10 @@
     overflow-x: auto;
 }
 
+.imgFoodSample {
+    max-height: 514px;
+}
+
 .p0 {
     padding: 0 6px 0 0;
 }
