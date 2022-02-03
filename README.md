@@ -1,11 +1,11 @@
 # BeerPartyAngular
 
 ## Welcome
-Welcome to Deale's Beer Party App! This SPA will guide you through the different 25 beers that will be available at the party. Choose your favorite one and join us!
+Welcome to Deale's Beer Party App! This SPA will guide you through the different beers that will be available at the party. Choose your favorite one and join us!
 
 Okay, but first, let's explain how to execute the app and some details.
 
-This app has been adapted from the same one, made with Vue. You can find it [here](https://github.com/ferranfusalba/beer-party-vue).
+This app has been adapted from the same one made with Vue. You can find it [here](https://github.com/ferranfusalba/beer-party-vue).
 
 ## Install
 
@@ -29,9 +29,11 @@ The `beer-list-component.html` is similar to Vue's `Beers.vue`. Instead of `v-fo
 
 The `beer-view-component.html` is every beer's details page, also similar to Vue's `Beer.vue`. `*ngFor`s and `*ngIf`s have also been applied, although no componentization with props has been made like in Vue. Everything (including header) is in the component.
 
-The visual structure of the app was made with Bootstrap and CSS. Only flexbox, margins, rows-columns and component structure (cards, accordion) have been declared in the classes of the html files (vue's `template`). The CSS stylesheet serves the local fonts, colors, borders, text-aligns, images behavior, etc.
+The visual structure of the app was made with Bootstrap and CSS. Only flexbox, margins, rows-columns and component structure (cards, accordion) have been declared in the classes of the html files. The CSS stylesheet serves the local fonts, colors, borders, text-aligns, images behavior, etc.
 
 Cheers! 🍻
+
+---
 
 ### Original README
 # BeerPartyAngular
